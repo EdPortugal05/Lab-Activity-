@@ -1,0 +1,43 @@
+// Category.cs
+public class Category
+{
+    public int CategoryId { get; set; } // Primary Key
+    public string CategoryName { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+
+    // Navigation Property
+    public ICollection<Product> Products { get; set; } = new List<Product>();
+}
+
+// Supplier.cs
+public class Supplier
+{
+    public int SupplierId { get; set; } // Primary Key
+    public string SupplierName { get; set; } = string.Empty;
+    public string Address { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string TaxCode { get; set; } = string.Empty;
+
+    // Navigation Property
+    public ICollection<Product> Products { get; set; } = new List<Product>();
+}
+
+// Product.cs
+public class Product
+{
+    public int ProductId { get; set; } // Added as Primary Key
+    public string ProductName { get; set; } = string.Empty;
+    public int Quantity { get; set; }
+    
+    // Foreign Keys
+    public int CategoryId { get; set; }
+    public int SupplierId { get; set; }
+    
+    public DateTime DateArrive { get; set; }
+    public DateTime DateExpired { get; set; }
+    public string BatchNumber { get; set; } = string.Empty;
+
+    // Navigation Properties
+    public Category? Category { get; set; }
+    public Supplier? Supplier { get; set; }
+}
