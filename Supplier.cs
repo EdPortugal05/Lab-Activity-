@@ -1,7 +1,7 @@
 ﻿using System;
-using Lab03_Product.Data;
-using Lab03_Product.Models;
-using Lab03_Product.Models;
+using LabAct_Product.Data;
+using LabAct_Product.Models;
+using LabAct_Product.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
